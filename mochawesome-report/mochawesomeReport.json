@@ -1,0 +1,179 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-09-13T10:33:18.708Z",
+    "end": "2021-09-13T10:33:22.288Z",
+    "duration": 3580,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6cab0901-1eff-4c5a-8ca8-d55eb22cc97e",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "549191ee-3d9e-4448-bed0-a773c3f35c89",
+          "title": "test cases for getting  the pet information ",
+          "fullFile": "/Users/ghazalmishra/Documents/Interview/api_Tests/test/test.js",
+          "file": "/test/test.js",
+          "beforeHooks": [],
+          "afterHooks": [
+            {
+              "title": "\"after each\" hook",
+              "fullTitle": "test cases for getting  the pet information  \"after each\" hook",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "addContext(this, {\n    title:  `Postal Code used:`,\n    value: JSON.stringify(testData.postalCode)\n})",
+              "err": {},
+              "uuid": "f95c66bf-d441-4f1a-a529-8960c802e16d",
+              "parentUUID": "549191ee-3d9e-4448-bed0-a773c3f35c89",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Functional Test: Should be able to post to the new pet store -> 1",
+              "fullTitle": "test cases for getting  the pet information  Functional Test: Should be able to post to the new pet store -> 1",
+              "timedOut": false,
+              "duration": 945,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"Postal Code used:\",\n  \"value\": \"undefined\"\n}",
+              "code": "let response = await chai.request(`https://petstore.swagger.io/v2/`).post(`pet?api_key=${testData.api_key}`).send(postRequest)\n    \nconsole.log(\"Response\", response.text)\nexpect(response.status).to.be.equal(200);\nvar result = JSON.parse(response.text)\nconsole.log(\"response post->\", result)",
+              "err": {},
+              "uuid": "3c37eee3-51e5-4c35-a76b-eb4b804ec010",
+              "parentUUID": "549191ee-3d9e-4448-bed0-a773c3f35c89",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Functional Test: Should be able to get the pet by id -> 1",
+              "fullTitle": "test cases for getting  the pet information  Functional Test: Should be able to get the pet by id -> 1",
+              "timedOut": false,
+              "duration": 855,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"Postal Code used:\",\n  \"value\": \"undefined\"\n}",
+              "code": "let response = await chai.request(`https://petstore.swagger.io/v2/`).get(`pet/${testData.petId}`)\nconsole.log(\"Response\", response.text)\nexpect(response.status).to.be.equal(200);\nvar result = JSON.parse(response.text)\n       \nexpect(result.name).to.deep.equal('tommy')\n\n           \nconsole.log(\"result get->\", result)",
+              "err": {},
+              "uuid": "5f9e3350-3259-46c0-bb82-4edcb3877fa1",
+              "parentUUID": "549191ee-3d9e-4448-bed0-a773c3f35c89",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Functional Test: Should be able to update the existing pet name -> 1",
+              "fullTitle": "test cases for getting  the pet information  Functional Test: Should be able to update the existing pet name -> 1",
+              "timedOut": false,
+              "duration": 912,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"Postal Code used:\",\n  \"value\": \"undefined\"\n}",
+              "code": "let response = await chai.request(`https://petstore.swagger.io/v2/`).put(`pet`).send(putRequest)\nconsole.log(\"Response\", response.text)\nexpect(response.status).to.be.equal(200);\nvar result = JSON.parse(response.text)\n       \nexpect(result.name).to.deep.equal('kumeshu-the great')\n\n           \nconsole.log(\"result put->\", result)",
+              "err": {},
+              "uuid": "69d3dfb4-4979-447a-a67d-3fb4037e5a5a",
+              "parentUUID": "549191ee-3d9e-4448-bed0-a773c3f35c89",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Functional Test: Should be able to delete an existing pet -> 1",
+              "fullTitle": "test cases for getting  the pet information  Functional Test: Should be able to delete an existing pet -> 1",
+              "timedOut": false,
+              "duration": 855,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"Postal Code used:\",\n  \"value\": \"undefined\"\n}",
+              "code": "let response = await chai.request(`https://petstore.swagger.io/v2/`).delete(`pet/${testData.petId}`)\nconsole.log(\"Response\", response.text)\nexpect(response.status).to.be.equal(200);\nvar result = JSON.parse(response.text)\n       \n           \n\n           \nconsole.log(\"result delete->\", result)",
+              "err": {},
+              "uuid": "93ee1141-68d2-4fea-9666-d820fa6a26e3",
+              "parentUUID": "549191ee-3d9e-4448-bed0-a773c3f35c89",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3c37eee3-51e5-4c35-a76b-eb4b804ec010",
+            "5f9e3350-3259-46c0-bb82-4edcb3877fa1",
+            "69d3dfb4-4979-447a-a67d-3fb4037e5a5a",
+            "93ee1141-68d2-4fea-9666-d820fa6a26e3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3567,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 120000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 120000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "6.2.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesomeReport",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportFilename": "mochawesomeReport"
+      },
+      "version": "5.2.0"
+    }
+  }
+}
